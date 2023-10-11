@@ -10,10 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestSpringBootApplication {
     public static void main(String[] args) {
+        // Application Launch
         SpringApplication.run(TestSpringBootApplication.class, args);
-        sayHello("Artyom");
+
+        // Hello World
+        System.out.println(sayHello("Artyomka"));
     }
 
+    // Hello World Method
     @GetMapping("/hello")
     public static String sayHello(@RequestParam(value = "myName", defaultValue = "World") String name){
         return String.format("Hello %s!", name);
